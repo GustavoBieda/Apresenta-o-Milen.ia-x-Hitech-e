@@ -1234,7 +1234,33 @@ html, body {
     padding: 40px 72px 44px;
     gap: 0;
     overflow: hidden;
+    position: absolute;
+}
+
+/* Wrapper do conteúdo real */
+.ws-content {
     position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+}
+
+/* Sistema de entrada ws-appear:
+   elementos ficam invisíveis até o slide ganhar .active,
+   aí animam com delay individual via --d */
+@keyframes ws-appear {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: none; }
+}
+.ws-appear {
+    opacity: 0;
+}
+.slide.active .ws-appear {
+    animation: ws-appear .6s cubic-bezier(.2,.7,.2,1) both;
+    animation-delay: var(--d, 0s);
 }
 
 /* Blobs de fundo */
@@ -1465,10 +1491,10 @@ html, body {
     border: 1px solid;
 }
 .ws-tool--pink   { background: hsla(330,100%,55%,.08); border-color: hsla(330,100%,55%,.25); }
-.ws-tool--purple { background: hsla(262,80%,55%,.08); border-color: hsla(262,80%,55%,.25); }
+.ws-tool--purple, .ws-tool--purple2 { background: hsla(262,80%,55%,.08); border-color: hsla(262,80%,55%,.25); }
 .ws-tool-tag  { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px; }
 .ws-tool--pink   .ws-tool-tag { color: #FF66B3; }
-.ws-tool--purple .ws-tool-tag { color: #A78BFA; }
+.ws-tool--purple .ws-tool-tag, .ws-tool--purple2 .ws-tool-tag { color: #A78BFA; }
 .ws-tool-name { font-size: 14px; font-weight: 700; color: #fff; }
 .ws-tool-hint { font-size: 11px; color: hsl(240 5% 60%); margin-top: 2px; }
 

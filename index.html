@@ -2294,15 +2294,13 @@
 <!-- ═══════════════════════════════════════════════════════════════════
      SLIDE — GUIA DO PROTÓTIPO (tela ambiente para o workshop)
      ═══════════════════════════════════════════════════════════════════ -->
-<section class="slide ws-guide" data-title="Guia: Crie seu protótipo" data-bloco="Workshop">
+<section class="slide ws-guide" id="ws-guide-slide" data-title="Guia: Crie seu protótipo" data-bloco="Workshop">
 
     <!-- Blobs de fundo animados -->
-    <div class="ws-blob ws-blob-1"></div>
-    <div class="ws-blob ws-blob-2"></div>
-    <div class="ws-blob ws-blob-3"></div>
-
-    <!-- Grade de pontos decorativa -->
-    <div class="ws-grid"></div>
+    <div class="ws-blob ws-blob-1" aria-hidden="true"></div>
+    <div class="ws-blob ws-blob-2" aria-hidden="true"></div>
+    <div class="ws-blob ws-blob-3" aria-hidden="true"></div>
+    <div class="ws-grid" aria-hidden="true"></div>
 
     <!-- Partículas flutuantes -->
     <div class="ws-particles" aria-hidden="true">
@@ -2310,98 +2308,73 @@
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- Cabeçalho -->
-    <header class="ws-header fade-child">
-        <div class="ws-live-badge">
-            <span class="ws-live-dot"></span> Workshop ao vivo
-        </div>
-        <div class="ws-clock" id="ws-clock">00:00:00</div>
-        <div class="ws-session-label">Sessão · 14h00 — 17h00</div>
-    </header>
+    <!-- Conteúdo principal (sem fade-child — usa ws-appear direto) -->
+    <div class="ws-content">
 
-    <!-- Título -->
-    <div class="ws-title-wrap fade-child">
-        <h2 class="ws-title">Como <span class="hero-grad">construir</span> seu protótipo</h2>
-        <p class="ws-sub">Siga o roteiro em grupo — do problema à solução funcionando.</p>
-    </div>
-
-    <!-- Passos -->
-    <div class="ws-steps fade-child">
-
-        <!-- PASSO 1 -->
-        <div class="ws-step ws-step--purple">
-            <div class="ws-step-num">1</div>
-            <div class="ws-step-body">
-                <div class="ws-step-label">Mapear o processo</div>
-                <p class="ws-step-text">Identifique uma <strong>tarefa manual repetitiva</strong> do seu setor — relatório, e-mail, checklist, aprovação. Quanto mais específico, melhor.</p>
+        <!-- Cabeçalho -->
+        <header class="ws-header ws-appear" style="--d:.1s">
+            <div class="ws-live-badge">
+                <span class="ws-live-dot"></span> Workshop ao vivo
             </div>
+            <div class="ws-clock" id="ws-clock">00:00:00</div>
+            <div class="ws-session-label">Sessão · 14h — 17h</div>
+        </header>
+
+        <!-- Título -->
+        <div class="ws-title-wrap ws-appear" style="--d:.25s">
+            <h2 class="ws-title">Como <span class="hero-grad">construir</span> seu protótipo</h2>
+            <p class="ws-sub">Siga o roteiro em grupo — do problema à solução funcionando.</p>
         </div>
 
-        <div class="ws-arrow" aria-hidden="true">→</div>
+        <!-- Passos -->
+        <div class="ws-steps ws-appear" style="--d:.4s">
 
-        <!-- PASSO 2 -->
-        <div class="ws-step ws-step--cyan">
-            <div class="ws-step-num">2</div>
-            <div class="ws-step-body">
-                <div class="ws-step-label">Estruturar com IA</div>
-                <p class="ws-step-text">Use <strong>Claude ou ChatGPT</strong> — descreva o problema e pergunte quais ferramentas usar e como montar a solução. Deixe a IA ser seu consultor.</p>
+            <!-- PASSO 1 -->
+            <div class="ws-step ws-step--purple">
+                <div class="ws-step-num">1</div>
+                <div class="ws-step-body">
+                    <div class="ws-step-label">Mapear o processo</div>
+                    <p class="ws-step-text">Identifique uma <strong>tarefa manual repetitiva</strong> do seu setor — relatório, e-mail, checklist, aprovação. Quanto mais específico, melhor.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="ws-arrow" aria-hidden="true">→</div>
+            <div class="ws-arrow" aria-hidden="true">→</div>
 
-        <!-- PASSO 3 -->
-        <div class="ws-step ws-step--green">
-            <div class="ws-step-num">3</div>
-            <div class="ws-step-body">
-                <div class="ws-step-label">Construir o protótipo</div>
-                <div class="ws-tools-row">
-                    <div class="ws-tool ws-tool--pink">
-                        <div class="ws-tool-tag">Simples</div>
-                        <div class="ws-tool-name">Lovable</div>
-                        <div class="ws-tool-hint">5 créditos grátis</div>
-                    </div>
-                    <div class="ws-tool-or">ou</div>
-                    <div class="ws-tool ws-tool--purple">
-                        <div class="ws-tool-tag">Complexo</div>
-                        <div class="ws-tool-name">Google Sites</div>
-                        <div class="ws-tool-hint">100% grátis</div>
+            <!-- PASSO 2 -->
+            <div class="ws-step ws-step--cyan">
+                <div class="ws-step-num">2</div>
+                <div class="ws-step-body">
+                    <div class="ws-step-label">Estruturar com IA</div>
+                    <p class="ws-step-text">Use <strong>Claude ou ChatGPT</strong> — descreva o problema e pergunte quais ferramentas usar e como montar a solução. A IA é seu consultor.</p>
+                </div>
+            </div>
+
+            <div class="ws-arrow" aria-hidden="true">→</div>
+
+            <!-- PASSO 3 -->
+            <div class="ws-step ws-step--green">
+                <div class="ws-step-num">3</div>
+                <div class="ws-step-body">
+                    <div class="ws-step-label">Construir o protótipo</div>
+                    <div class="ws-tools-row">
+                        <div class="ws-tool ws-tool--pink">
+                            <div class="ws-tool-tag">Simples</div>
+                            <div class="ws-tool-name">Lovable</div>
+                            <div class="ws-tool-hint">5 créditos grátis</div>
+                        </div>
+                        <div class="ws-tool-or">ou</div>
+                        <div class="ws-tool ws-tool--purple2">
+                            <div class="ws-tool-tag">Complexo</div>
+                            <div class="ws-tool-name">Google Sites</div>
+                            <div class="ws-tool-hint">100% grátis</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div><!-- /ws-steps -->
+        </div><!-- /ws-steps -->
 
-    <!-- Script do relógio -->
-    <script>
-    (function() {
-        var el = document.getElementById('ws-clock');
-        if (!el) return;
-        var start = null;
-        function tick() {
-            if (!start) {
-                // Começa a contar quando o slide ficar ativo
-                var section = el.closest('section');
-                if (section && section.classList.contains('active')) {
-                    start = Date.now();
-                } else {
-                    requestAnimationFrame(tick);
-                    return;
-                }
-            }
-            var s = Math.floor((Date.now() - start) / 1000);
-            var h = Math.floor(s / 3600);
-            var m = Math.floor((s % 3600) / 60);
-            var sec = s % 60;
-            el.textContent = (h ? String(h).padStart(2,'0')+':' : '') +
-                             String(m).padStart(2,'0') + ':' +
-                             String(sec).padStart(2,'0');
-            requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-    })();
-    </script>
+    </div><!-- /ws-content -->
 
 </section>
 

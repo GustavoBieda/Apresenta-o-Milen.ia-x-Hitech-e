@@ -228,6 +228,44 @@
     // Hash change listener (for deep-linking)
     window.addEventListener('hashchange', () => go(parseHash(), { push: false }));
 
+    // ----------------------- Workshop guide clock -----------------------
+    (function () {
+        const clockEl = document.getElementById('ws-clock');
+        const guideSlide = document.getElementById('ws-guide-slide');
+        if (!clockEl || !guideSlide) return;
+
+        let startTs = null;
+        let rafId   = null;
+
+        function fmt(s) {
+            const h = Math.floor(s / 3600);
+            const m = Math.floor((s % 3600) / 60);
+            const sec = s % 60;
+            const mm  = String(m).padStart(2, '0');
+            const ss  = String(sec).padStart(2, '0');
+            return h > 0 ? String(h).padStart(2, '0') + ':' + mm + ':' + ss
+                         : mm + ':' + ss;
+        }
+
+        function tick() {
+            if (startTs !== null) {
+                clockEl.textContent = fmt(Math.floor((Date.now() - startTs) / 1000));
+            }
+            rafId = requestAnimationFrame(tick);
+        }
+
+        // Observa quando o slide ganha / perde .active
+        const obs = new MutationObserver(() => {
+            if (guideSlide.classList.contains('active')) {
+                if (startTs === null) startTs = Date.now();
+                if (!rafId) rafId = requestAnimationFrame(tick);
+            } else {
+                if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+            }
+        });
+        obs.observe(guideSlide, { attributeFilter: ['class'] });
+    })();
+
     // Touch swipe
     let tStartX = 0, tStartY = 0, tMoved = false;
     deck.addEventListener('touchstart', (e) => {
