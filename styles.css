@@ -243,6 +243,21 @@ html, body {
     text-transform: uppercase;
     font-weight: 500;
 }
+.divider-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.divider-brand-sep {
+    color: hsla(0,0%,100%,.25);
+    font-size: 13px;
+    font-weight: 400;
+}
+.divider-hitech-logo {
+    height: 12px;
+    opacity: .85;
+    display: inline-block;
+}
 
 @media (max-width: 900px) {
     .slide.divider { padding: 48px 44px 76px; }
