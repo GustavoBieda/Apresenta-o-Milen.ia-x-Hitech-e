@@ -254,9 +254,17 @@ html, body {
     font-weight: 400;
 }
 .divider-hitech-logo {
-    height: 12px;
+    height: 14px !important;
+    max-height: 14px !important;
+    width: auto !important;
     opacity: .85;
     display: inline-block;
+    vertical-align: middle;
+}
+/* Proteção: qualquer imagem dentro de um divider nunca ultrapassa o rodapé. */
+.slide.divider img {
+    max-height: 40px;
+    max-width: 200px;
 }
 
 @media (max-width: 900px) {
