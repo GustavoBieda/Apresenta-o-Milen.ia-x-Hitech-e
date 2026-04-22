@@ -1,0 +1,17 @@
+@import url('../colors_and_type.css');
+html, body { height: 100%; }
+body {
+    padding: 20px;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+body.dark-bg {
+    background: hsl(240 10% 4%);
+    color: #fff;
+}
+.card-root {
+    padding: 20px;
+    border-radius: 0;
+}
+.label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: hsl(var(--muted-foreground)); }
+.mono  { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; }

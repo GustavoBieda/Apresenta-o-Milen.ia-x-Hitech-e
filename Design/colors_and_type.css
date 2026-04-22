@@ -1,0 +1,305 @@
+/* ==========================================================================
+   Milen.ia Design System — Foundation tokens + type + utilities
+   Source: https://milen-ia.com/design-system
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ------------------------------------------------------------------
+   TOKENS — semantic HSL. Always prefer these over raw hex.
+   Dark is the canonical surface of the brand ("dark-tech").
+   ------------------------------------------------------------------ */
+:root {
+    /* Semantic — light */
+    --primary: 330 100% 50%;            /* #FF0080 — brand pink */
+    --primary-foreground: 0 0% 100%;
+    --accent: 220 70% 50%;              /* cool blue */
+    --accent-foreground: 0 0% 100%;
+
+    --background: 0 0% 100%;
+    --foreground: 240 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 45%;
+    --border: 240 5% 90%;
+    --input: 240 5% 90%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 262 83% 58%;
+
+    /* Special — hero palette (fixed hex; always vibrant regardless of theme) */
+    --hero-cyan:   #00E0FF;
+    --hero-purple: #6B46C1;
+    --hero-pink:   #FF0099;
+
+    /* Accent set */
+    --accent-purple: #A855F7;
+    --accent-green:  #4ADE80;
+    --agente-teal:   #00E6B8;           /* hsl(168 100% 45%) */
+
+    /* Geometry */
+    --radius: 0.75rem;                  /* default */
+    --radius-hero: 2.5rem;              /* hero surfaces */
+
+    /* Type */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+    /* Shadows & glows */
+    --shadow-primary:   0 10px 40px -10px hsl(var(--primary) / .30);
+    --glow-pink:        0 0 40px 0 hsl(330 100% 55% / .45), 0 0 80px 0 hsl(330 100% 55% / .25);
+    --glow-teal:        0 0 40px 0 hsl(168 100% 50% / .45), 0 0 80px 0 hsl(168 100% 50% / .20);
+}
+
+/* dark mode — canonical Milen.ia surface */
+.dark, :root.dark {
+    --background: 240 10% 4%;           /* near-black with a hint of violet */
+    --foreground: 0 0% 98%;
+    --card: 240 8% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 5% 65%;
+    --border: 240 6% 18%;
+    --input: 240 6% 14%;
+    --ring: 330 100% 60%;
+
+    --primary: 330 100% 55%;
+    --accent: 262 83% 58%;
+}
+
+/* ------------------------------------------------------------------
+   BASE
+   ------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    color: hsl(var(--foreground));
+    background: hsl(var(--background));
+}
+
+/* ------------------------------------------------------------------
+   TYPE — tailwind-style utilities materialised as semantic classes
+   ------------------------------------------------------------------ */
+.t-h1     { font-size: 3rem;    line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+.t-h2     { font-size: 2.25rem; line-height: 1.1;  font-weight: 700; letter-spacing: -0.02em; }
+.t-h3     { font-size: 1.875rem;line-height: 1.15; font-weight: 600; letter-spacing: -0.01em; }
+.t-h4     { font-size: 1.5rem;  line-height: 1.25; font-weight: 600; }
+.t-body   { font-size: 1rem;    line-height: 1.6;  font-weight: 400; }
+.t-small  { font-size: 0.875rem;line-height: 1.5;  font-weight: 400; color: hsl(var(--muted-foreground)); }
+.t-mono   { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.875rem; }
+
+@media (min-width: 768px) {
+    .t-h1 { font-size: 4rem;   }
+    .t-h2 { font-size: 3rem;   }
+    .t-h3 { font-size: 2.25rem;}
+}
+
+/* Gradient text — two flavours */
+.gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--ring)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.hero-gradient-text {
+    background: linear-gradient(110deg, var(--hero-cyan) 0%, var(--hero-purple) 45%, var(--hero-pink) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ------------------------------------------------------------------
+   GLASS — milen.ia's signature surface
+   ------------------------------------------------------------------ */
+.glass {
+    background: hsl(var(--card) / .45);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid hsl(0 0% 100% / .08);
+    border-radius: var(--radius);
+}
+.glass-card {
+    background: hsl(var(--card) / .60);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(0 0% 100% / .06);
+    border-radius: var(--radius);
+}
+.dark .glass       { background: hsl(240 10% 8% / .55); border-color: hsl(0 0% 100% / .06); }
+.dark .glass-card  { background: hsl(240 10% 10% / .70); border-color: hsl(0 0% 100% / .05); }
+
+/* Gradient-border wrapper: <div class="gradient-bg" style="padding:2px"><div class="inner"></div></div> */
+.gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--ring)) 50%, var(--hero-cyan));
+    border-radius: var(--radius);
+}
+
+/* ------------------------------------------------------------------
+   GLOW & BADGE — agente theme
+   ------------------------------------------------------------------ */
+.agente-glow-pink { box-shadow: var(--glow-pink); }
+.agente-glow-teal { box-shadow: var(--glow-teal); }
+
+.agente-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, hsl(var(--primary)), var(--agente-teal));
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: var(--glow-pink);
+}
+
+/* ------------------------------------------------------------------
+   ANIMATIONS
+   ------------------------------------------------------------------ */
+@keyframes fade-up   { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fade-in   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float     { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes pulse-dot { 0%,100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.25); opacity: .5; } }
+@keyframes scroll-logos { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes move-bg   { from { background-position: 0 0; } to { background-position: 400px 400px; } }
+@keyframes hero-bg   {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-fade-up     { animation: fade-up .6s cubic-bezier(.2,.7,.2,1) both; }
+.animate-fade-in     { animation: fade-in .6s ease both; }
+.animate-float       { animation: float 4s ease-in-out infinite; }
+.animate-pulse       { animation: pulse 2s ease-in-out infinite; }
+.animate-pulse-dot   { animation: pulse-dot 1.4s ease-in-out infinite; }
+.animate-scroll-logos{ animation: scroll-logos 30s linear infinite; }
+.animate-move-bg     { animation: move-bg 20s linear infinite; }
+.animate-hero-bg     {
+    background-size: 200% 200%;
+    animation: hero-bg 12s ease-in-out infinite;
+}
+
+/* hero backdrop — dark mesh used behind landing */
+.hero-backdrop {
+    background:
+        radial-gradient(ellipse 70% 55% at 20% 10%,  hsl(262 83% 40% / .55), transparent 60%),
+        radial-gradient(ellipse 60% 55% at 85% 25%,  hsl(330 100% 45% / .55), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 50% 100%, hsl(188 100% 45% / .35), transparent 70%),
+        hsl(240 12% 4%);
+}
+
+/* ------------------------------------------------------------------
+   BUTTON — shadcn-style, rounded-full default with primary glow
+   ------------------------------------------------------------------ */
+.btn {
+    --btn-h: 2.5rem;
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    height: var(--btn-h);
+    padding: 0 1.1rem;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    white-space: nowrap;
+}
+.btn:active { transform: translateY(1px) scale(.99); }
+
+.btn-sm { --btn-h: 2rem;   padding: 0 .9rem; font-size: .8rem; }
+.btn-lg { --btn-h: 3rem;   padding: 0 1.5rem; font-size: 1rem; }
+
+.btn-default {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 8px 24px -8px hsl(var(--primary) / .5);
+}
+.btn-default:hover { box-shadow: 0 10px 30px -6px hsl(var(--primary) / .65); }
+
+.btn-outline {
+    background: transparent;
+    color: hsl(var(--foreground));
+    border-color: hsl(var(--border));
+}
+.btn-outline:hover { background: hsl(var(--muted)); }
+
+.btn-secondary {
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+}
+.btn-secondary:hover { background: hsl(var(--border)); }
+
+.btn-ghost {
+    background: transparent;
+    color: hsl(var(--foreground));
+}
+.btn-ghost:hover { background: hsl(var(--muted)); }
+
+.btn-link {
+    background: transparent; color: hsl(var(--primary)); padding: 0; height: auto;
+    border-radius: 0;
+    text-decoration: underline; text-underline-offset: 4px;
+}
+
+.btn-destructive {
+    background: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+}
+
+/* ------------------------------------------------------------------
+   INPUTS
+   ------------------------------------------------------------------ */
+.field-label {
+    display: block;
+    font-size: .82rem; font-weight: 500;
+    color: hsl(var(--foreground));
+    margin-bottom: .4rem;
+}
+
+.field {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 .85rem;
+    background: hsl(var(--input));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    transition: border-color .15s, box-shadow .15s;
+    outline: none;
+}
+.field:focus { border-color: hsl(var(--ring)); box-shadow: 0 0 0 3px hsl(var(--ring) / .18); }
+.field:disabled { opacity: .5; cursor: not-allowed; }
+
+textarea.field { height: auto; padding: .7rem .85rem; min-height: 6rem; resize: vertical; }
+
+/* ------------------------------------------------------------------
+   CARD
+   ------------------------------------------------------------------ */
+.card {
+    background: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 1.25rem;
+}
+
+/* ------------------------------------------------------------------
+   HELPERS
+   ------------------------------------------------------------------ */
+.stack  { display: flex; flex-direction: column; gap: 1rem; }
+.row    { display: flex; align-items: center; gap: .75rem; }
+.wrap   { display: flex; flex-wrap: wrap; gap: .5rem; }
+.center { display: flex; align-items: center; justify-content: center; }
