@@ -2292,55 +2292,117 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE — GUIA DO PROTÓTIPO
+     SLIDE — GUIA DO PROTÓTIPO (tela ambiente para o workshop)
      ═══════════════════════════════════════════════════════════════════ -->
-<section class="slide bg-flat" data-title="Guia: Crie seu protótipo" data-bloco="Workshop">
-    <div class="fade-child slide-tag"><span class="dot"></span> Workshop · Roteiro passo a passo</div>
-    <h2 class="fade-child slide-title">Como <span class="hero-grad">construir</span> seu protótipo.</h2>
-    <p class="fade-child slide-subtitle" style="margin-bottom: 32px;">Siga este roteiro em grupo — do problema à solução funcionando.</p>
+<section class="slide ws-guide" data-title="Guia: Crie seu protótipo" data-bloco="Workshop">
 
-    <div class="fade-child" style="display: flex; flex-direction: column; gap: 16px; max-width: 900px;">
+    <!-- Blobs de fundo animados -->
+    <div class="ws-blob ws-blob-1"></div>
+    <div class="ws-blob ws-blob-2"></div>
+    <div class="ws-blob ws-blob-3"></div>
+
+    <!-- Grade de pontos decorativa -->
+    <div class="ws-grid"></div>
+
+    <!-- Partículas flutuantes -->
+    <div class="ws-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="ws-header fade-child">
+        <div class="ws-live-badge">
+            <span class="ws-live-dot"></span> Workshop ao vivo
+        </div>
+        <div class="ws-clock" id="ws-clock">00:00:00</div>
+        <div class="ws-session-label">Sessão · 14h00 — 17h00</div>
+    </header>
+
+    <!-- Título -->
+    <div class="ws-title-wrap fade-child">
+        <h2 class="ws-title">Como <span class="hero-grad">construir</span> seu protótipo</h2>
+        <p class="ws-sub">Siga o roteiro em grupo — do problema à solução funcionando.</p>
+    </div>
+
+    <!-- Passos -->
+    <div class="ws-steps fade-child">
 
         <!-- PASSO 1 -->
-        <div style="display:flex; gap:20px; align-items:flex-start; padding: 18px 22px; background: hsla(262,80%,55%,.08); border: 1px solid hsla(262,80%,55%,.25); border-radius: 16px;">
-            <div style="min-width:40px; height:40px; border-radius:50%; background: hsl(var(--primary)/.2); border: 1.5px solid hsl(var(--primary)/.6); display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800; color:#C084FC;">1</div>
-            <div>
-                <div style="font-size:13px; font-weight:700; color:#C084FC; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px;">Mapear o processo</div>
-                <p style="margin:0; font-size:14px; color:hsl(240 5% 80%); line-height:1.55;">Identifique uma <b style="color:#fff;">tarefa manual repetitiva</b> do seu setor: preenchimento de relatório, resposta de e-mail, checklist, aprovação… O quanto mais específico, melhor.</p>
+        <div class="ws-step ws-step--purple">
+            <div class="ws-step-num">1</div>
+            <div class="ws-step-body">
+                <div class="ws-step-label">Mapear o processo</div>
+                <p class="ws-step-text">Identifique uma <strong>tarefa manual repetitiva</strong> do seu setor — relatório, e-mail, checklist, aprovação. Quanto mais específico, melhor.</p>
             </div>
         </div>
+
+        <div class="ws-arrow" aria-hidden="true">→</div>
 
         <!-- PASSO 2 -->
-        <div style="display:flex; gap:20px; align-items:flex-start; padding: 18px 22px; background: hsla(188,100%,55%,.07); border: 1px solid hsla(188,100%,55%,.22); border-radius: 16px;">
-            <div style="min-width:40px; height:40px; border-radius:50%; background: hsla(188,100%,55%,.15); border: 1.5px solid hsla(188,100%,55%,.5); display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800; color:#00E0FF;">2</div>
-            <div>
-                <div style="font-size:13px; font-weight:700; color:#00E0FF; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px;">Estruturar com IA</div>
-                <p style="margin:0; font-size:14px; color:hsl(240 5% 80%); line-height:1.55;">Use <b style="color:#fff;">Claude ou ChatGPT</b> para descrever o problema e perguntar: <em style="color:hsl(240 5% 70%);">"Que ferramentas posso usar para automatizar isso? Como estruturo a solução?"</em> — deixe a IA ser seu consultor.</p>
+        <div class="ws-step ws-step--cyan">
+            <div class="ws-step-num">2</div>
+            <div class="ws-step-body">
+                <div class="ws-step-label">Estruturar com IA</div>
+                <p class="ws-step-text">Use <strong>Claude ou ChatGPT</strong> — descreva o problema e pergunte quais ferramentas usar e como montar a solução. Deixe a IA ser seu consultor.</p>
             </div>
         </div>
 
+        <div class="ws-arrow" aria-hidden="true">→</div>
+
         <!-- PASSO 3 -->
-        <div style="display:flex; gap:20px; align-items:flex-start; padding: 18px 22px; background: hsla(145,65%,50%,.07); border: 1px solid hsla(145,65%,50%,.22); border-radius: 16px;">
-            <div style="min-width:40px; height:40px; border-radius:50%; background: hsla(145,65%,50%,.15); border: 1.5px solid hsla(145,65%,50%,.5); display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800; color:#4ADE80;">3</div>
-            <div style="flex:1;">
-                <div style="font-size:13px; font-weight:700; color:#4ADE80; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px;">Construir o protótipo</div>
-                <p style="margin:0 0 10px; font-size:14px; color:hsl(240 5% 80%); line-height:1.55;">Escolha a ferramenta certa para o nível do projeto:</p>
-                <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                    <div style="padding:10px 16px; background: hsla(330,100%,55%,.1); border:1px solid hsla(330,100%,55%,.3); border-radius:10px; flex:1; min-width:180px;">
-                        <div style="font-size:12px; font-weight:700; color:#FF66B3; margin-bottom:3px;">Projeto simples</div>
-                        <div style="font-size:13px; color:#fff; font-weight:600;">Lovable</div>
-                        <div style="font-size:11px; color:hsl(240 5% 65%); margin-top:2px;">5 créditos grátis · app funcional em minutos</div>
+        <div class="ws-step ws-step--green">
+            <div class="ws-step-num">3</div>
+            <div class="ws-step-body">
+                <div class="ws-step-label">Construir o protótipo</div>
+                <div class="ws-tools-row">
+                    <div class="ws-tool ws-tool--pink">
+                        <div class="ws-tool-tag">Simples</div>
+                        <div class="ws-tool-name">Lovable</div>
+                        <div class="ws-tool-hint">5 créditos grátis</div>
                     </div>
-                    <div style="padding:10px 16px; background: hsla(262,80%,55%,.1); border:1px solid hsla(262,80%,55%,.3); border-radius:10px; flex:1; min-width:180px;">
-                        <div style="font-size:12px; font-weight:700; color:#A78BFA; margin-bottom:3px;">Projeto complexo</div>
-                        <div style="font-size:13px; color:#fff; font-weight:600;">Google Sites</div>
-                        <div style="font-size:11px; color:hsl(240 5% 65%); margin-top:2px;">100% grátis · portal, dashboard, integração Drive</div>
+                    <div class="ws-tool-or">ou</div>
+                    <div class="ws-tool ws-tool--purple">
+                        <div class="ws-tool-tag">Complexo</div>
+                        <div class="ws-tool-name">Google Sites</div>
+                        <div class="ws-tool-hint">100% grátis</div>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
+    </div><!-- /ws-steps -->
+
+    <!-- Script do relógio -->
+    <script>
+    (function() {
+        var el = document.getElementById('ws-clock');
+        if (!el) return;
+        var start = null;
+        function tick() {
+            if (!start) {
+                // Começa a contar quando o slide ficar ativo
+                var section = el.closest('section');
+                if (section && section.classList.contains('active')) {
+                    start = Date.now();
+                } else {
+                    requestAnimationFrame(tick);
+                    return;
+                }
+            }
+            var s = Math.floor((Date.now() - start) / 1000);
+            var h = Math.floor(s / 3600);
+            var m = Math.floor((s % 3600) / 60);
+            var sec = s % 60;
+            el.textContent = (h ? String(h).padStart(2,'0')+':' : '') +
+                             String(m).padStart(2,'0') + ':' +
+                             String(sec).padStart(2,'0');
+            requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    })();
+    </script>
+
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════
