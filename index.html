@@ -1699,47 +1699,56 @@
 <!-- ═══════════════════════════════════════════════════════════════════
      SLIDE 35 — CLAUDE CODE / CURSOR
      ═══════════════════════════════════════════════════════════════════ -->
-<section class="slide bg-mesh-faint" data-title="Claude Code & Cursor" data-bloco="Ferramentas · Parte 2">
-    <div class="fade-child slide-tag"><span class="dot"></span> SLIDE 35 · Dev com IA</div>
+<section class="slide bg-mesh-faint" data-title="OpenClaw" data-bloco="Ferramentas · Parte 2">
+    <div class="fade-child slide-tag"><span class="dot"></span> SLIDE 35 · Agente de IA autônomo</div>
     <div class="tool-layout fade-child">
         <div class="tool-left">
             <div>
-                <span class="kicker">Desenvolvimento com IA para Devs</span>
-                <h2 class="slide-title" style="margin: 0; font-size: clamp(40px, 4vw, 56px);">Claude Code · Cursor</h2>
+                <span class="kicker">Agente que pensa e age por você</span>
+                <h2 class="slide-title" style="margin: 0; font-size: clamp(40px, 4vw, 56px);">OpenClaw</h2>
                 <div class="tool-meta">
-                    <span class="chip pink">Anthropic · Cursor</span>
-                    <span class="chip">CLI · cursor.com</span>
-                    <span class="chip">Gratuito + pago</span>
+                    <span class="chip pink">Agente IA</span>
+                    <span class="chip">openclaw.ai</span>
+                    <span class="chip">Gratuito (beta)</span>
                 </div>
             </div>
             <p class="tool-desc">
-                Ferramentas para desenvolvedores que usam IA como co-piloto. Claude Code é uma ferramenta de linha de comando onde o dev diz <b>o que</b> quer e a IA escreve o código. Cursor é um editor de código com IA integrada. Mesmo não sendo programador, é importante conhecer: você pode <b>pedir</b> para a IA criar sistemas.
+                Agente de IA que executa tarefas completas de forma autônoma — navega na web, preenche formulários, coleta dados, envia e-mails e opera sistemas como um humano faria. Você descreve o objetivo em português e o OpenClaw cuida do resto, passo a passo.
             </p>
             <ul class="tool-list">
-                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Programar, depurar em linguagem natural</li>
-                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Automações complexas entre sistemas</li>
-                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>APIs e backends para apps internos</li>
-                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Refatorar e otimizar código</li>
-                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Gerar testes automatizados</li>
-                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Requisitos → código funcional</li>
+                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Executa tarefas multi-etapa sem intervenção</li>
+                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Navega sites, preenche e envia formulários</li>
+                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Coleta e organiza informações da internet</li>
+                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Integra com ferramentas do dia a dia</li>
+                <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Instrução em linguagem natural — sem código</li>
             </ul>
-            <div><span class="demo-pill">● Ao vivo</span><span class="text-muted" style="font-size:13px; margin-left:10px;">Script de automação em português → código pronto.</span></div>
+            <div><span class="demo-pill">● Ao vivo</span><span class="text-muted" style="font-size:13px; margin-left:10px;">Pedir ao agente para pesquisar e compilar informações automaticamente.</span></div>
         </div>
         <div class="tool-mock">
-            <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">~/hitech-tools</div></div>
-            <div class="body" style="padding: 16px; font-family: ui-monospace, monospace; font-size: 12px; line-height: 1.65; color: hsl(240 5% 80%);">
-                <div style="color: #4ADE80;">$ claude "crie script que consolida 3 planilhas Excel em 1 relatório"</div>
-                <div style="margin-top: 8px; color: hsl(240 5% 60%);">→ Criando consolidar.py...</div>
-                <div style="padding: 10px 12px; background: hsla(0,0%,100%,.03); border-radius: 6px; margin-top: 6px; border-left: 2px solid #00E0FF;">
-                    <span style="color: #C084FC;">import</span> pandas <span style="color: #C084FC;">as</span> pd<br>
-                    <span style="color: #C084FC;">from</span> pathlib <span style="color: #C084FC;">import</span> Path<br>
-                    <br>
-                    <span style="color: #F59E0B;">def</span> <span style="color: #4ADE80;">consolidar</span>(pasta):<br>
-                    &nbsp;&nbsp;arquivos = Path(pasta).glob(<span style="color: #FF0099;">"*.xlsx"</span>)<br>
-                    &nbsp;&nbsp;dfs = [pd.read_excel(f) <span style="color: #C084FC;">for</span> f <span style="color: #C084FC;">in</span> arquivos]<br>
-                    &nbsp;&nbsp;<span style="color: #C084FC;">return</span> pd.concat(dfs, ignore_index=True)
+            <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">openclaw.ai · Agente em execução</div></div>
+            <div class="body" style="padding: 16px; display:flex; flex-direction:column; gap:10px;">
+                <div style="padding:10px 14px; background:hsla(262,80%,55%,.1); border:1px solid hsla(262,80%,55%,.25); border-radius:10px; font-size:12px;">
+                    <div style="color:#A78BFA; font-weight:700; margin-bottom:4px;">🎯 Tarefa recebida</div>
+                    <div style="color:hsl(240 5% 85%);">"Pesquise os 5 principais fornecedores de baterias para veículos elétricos no Brasil e monte uma tabela comparativa com preços e contatos."</div>
                 </div>
-                <div style="margin-top: 8px; color: #4ADE80;">✓ Script pronto — 3s</div>
+                <div style="display:flex; flex-direction:column; gap:6px; font-size:12px;">
+                    <div style="display:flex; align-items:center; gap:8px; padding:7px 12px; background:hsla(145,65%,50%,.08); border:1px solid hsla(145,65%,50%,.2); border-radius:8px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                        <span style="color:#4ADE80; font-weight:600;">Navegando fornecedores…</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px; padding:7px 12px; background:hsla(145,65%,50%,.08); border:1px solid hsla(145,65%,50%,.2); border-radius:8px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                        <span style="color:#4ADE80; font-weight:600;">Extraindo dados de contato…</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px; padding:7px 12px; background:hsla(188,100%,55%,.07); border:1px solid hsla(188,100%,55%,.2); border-radius:8px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00E0FF" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span style="color:#00E0FF; font-weight:600;">Montando tabela comparativa…</span>
+                    </div>
+                </div>
+                <div style="padding:10px 14px; background:hsla(0,0%,100%,.03); border:1px solid hsla(0,0%,100%,.08); border-radius:8px; font-size:11px; color:hsl(240 5% 70%);">
+                    <b style="color:#fff; display:block; margin-bottom:4px;">📊 Resultado pronto em 42s</b>
+                    5 fornecedores · preços · e-mails · links — exportado em .xlsx
+                </div>
             </div>
         </div>
     </div>
@@ -2872,7 +2881,7 @@
                 <tr><td>Google Sites</td><td class="u">sites.google.com</td><td class="c">Gratuito</td></tr>
                 <tr><td>Lovable</td><td class="u">lovable.dev</td><td class="c">Gratuito (limitado)</td></tr>
                 <tr><td>Bolt.new</td><td class="u">bolt.new</td><td class="c">Gratuito (limitado)</td></tr>
-                <tr><td>Cursor</td><td class="u">cursor.com</td><td class="c">Gratuito (limitado)</td></tr>
+                <tr><td>OpenClaw</td><td class="u">openclaw.ai</td><td class="c">Gratuito (beta)</td></tr>
                 <tr><td>n8n</td><td class="u">n8n.io</td><td class="c">Gratuito (self-hosted)</td></tr>
                 <tr><td>Zapier</td><td class="u">zapier.com</td><td class="c">Gratuito (limitado)</td></tr>
                 <tr><td>Make</td><td class="u">make.com</td><td class="c">Gratuito (limitado)</td></tr>
